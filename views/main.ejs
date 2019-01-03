@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style_main.css">
+<script src="chatbox.js"></script>
+</head>
+<body>
+
+   <h1>   Chatbox With Firebase! </h1>
+
+   <div id="messagebox">
+         <ul id="myList">
+         </ul>
+   </div>
+
+    <div id="name_msg">
+          <div id="contact"><i class="fa fa-user fa-3x" aria-hidden="true"></i></div>
+           <br>
+          <div id="clos"  onclick="closin()"> <i class="fa fa-window-close" aria-hidden="true"></i></div>
+          <input type="text" id="username" placeholder="Enter your name"></input>
+          <br><br>
+          <textarea id="maintext" placeholder="Enter text here"></textarea>
+          <button id="buttonclick"><i class="fa fa-chevron-circle-right"></i></button>
+    </div>
+   <div id="chat" onclick="view()">
+         <i class="fa fa-comments-o fa-3x" aria-hidden="true"></i>
+   </div>
+</body>
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+        var config = {
+        apiKey: "AIzaSyAm41meLFNA6J7wDZCQAKBb_vzNZwCNGqM",
+        authDomain: "video-repo.firebaseapp.com",
+        databaseURL: "https://video-repo.firebaseio.com",
+        projectId: "video-repo",
+        storageBucket: "video-repo.appspot.com",
+        messagingSenderId: "666222836703"
+      };
+      firebase.initializeApp(config);
+      console.log(firebase);
+  </script>
+  <script>
+
+
+
+  </script>
+
+</html>
