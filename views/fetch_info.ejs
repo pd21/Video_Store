@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="style_main.css">
+<script src="chatbox.js"></script>
+</head>
+<body>
+
+   <h1>   Chatbox With Firebase! </h1>
+
+   <div id="messagebox">
+         <ul id="myList">
+         </ul>
+   </div>
+
+    <div id="name_msg">
+          hey fetch_ info
+     </div>
+
+</body>
+
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+
+
+<script>
+// Initialize Firebase
+      var config = {
+      apiKey: "AIzaSyAhQYL0m5eyb2lv6unqMDHKqe2x6I02G34",
+      authDomain: "video-fa7ba.firebaseapp.com",
+      databaseURL: "https://video-fa7ba.firebaseio.com",
+      projectId: "video-fa7ba",
+      storageBucket: "video-fa7ba.appspot.com",
+      messagingSenderId: "117315506589"
+      };
+      firebase.initializeApp(config);
+      var firebaseref = firebase.database().ref();
+      firebaseref.on('value',gotData,errData);
+
+      function gotData(data){
+
+                  $("ul").empty();
+                  var broadcast = data.val();
+                  var keys = Object.keys(broadcast);
+
+                      for(var keys in broadcast ){
+                          var node = document.createElement("LI");
+                          var textnode = document.createTextNode( broadcast[keys].name + "     ::      " + broadcast[keys].message);
+                          node.appendChild(textnode);
+                          document.getElementById("myList").appendChild(node);
+                      }
+        }
+        function errData(data){
+                console.log('Error!');
+                console.log(err);
+       }
+
+</script>
+
+</html>

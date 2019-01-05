@@ -16,8 +16,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 var main = require('./app/main.js');
 
 // routes
-app.use('/', main);
+app.use('/videostore', main);
 
+app.get('/',(req,res)=>{
+	res.redirect('/videostore');
+})
 app.listen(port, () => {
 	console.log('Server is running on port: ' + port);
 });
